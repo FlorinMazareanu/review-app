@@ -23,8 +23,8 @@ MongoClient.connect('mongodb://127.0.0.1:27017/reviewDB',function(err, database)
 		return ;
 	}
 	routes(app,database)
-	app.listen(80); 
+	app.listen(8080); 
 })
 
 
-console.info('listening at 80');
+console.info('listening at 8080');
