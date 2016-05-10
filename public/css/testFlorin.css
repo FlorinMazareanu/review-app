@@ -1,0 +1,11 @@
+.flemRedBtn{
+	background-image: linear-gradient(to bottom,blue 0,green 100%);
+	color:white;
+	border-radius: 0px;
+} 
+.flemRedBtn:hover{
+	background-image: linear-gradient(to left,red 0,blue 100%);
+	color:white;
+	background-color:black;
+	border-radius: 7px;
+}
