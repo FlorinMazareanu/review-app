@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<title></title> 
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css" />
+	<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script src="js/angular-cookies.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script> 
+	<script type="text/javascript" src="js/app.js"></script>
+</head>
+<body ng-app = "reviewsApp"> 
+<h1>Create User Page</h1>
+<h1>HHHHHHHHHHHHH</h1>
+<div  ng-controller="RegisterUserController as ctrl">
+	<form>
+	<p>First name</p>
+	<input type="text" ng-model="ctrl.firstName"></input>
+	<%= ctrl._errors.firstName%>
+	<p>Last name</p>
+	<input type="text" ng-model="ctrl.lastName"></input>
+	<%= ctrl._errors.lastName%>
+	<p>Email adress</p>
+	<input type="text" ng-model="ctrl.email"></input>
+	<%= ctrl._errors.email%>
+	<p>Password</p>
+	<input type="password" ng-model="ctrl.password"></input>
+	<%= ctrl._errors.password%>
+	<p>Confirm password</p>
+	<input type="password" ng-model="ctrl.password2"></input>
+	<%= ctrl._errors.password2%>
+	<button type="button" ng-click = "register()" ng-disabled= "ctrl.isBusy">Register</button>
+</form>
+
+</div>
+
+
+	
+</body>
+</html>

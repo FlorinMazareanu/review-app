@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Write Review Page</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css" />
+	<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="js/angular.min.js"></script> 
+    <script src="js/angular-cookies.min.js"></script> 
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+</head>
+<body ng-app = "reviewsApp">
+<h1>Write review Page</h1>
+<div ng-controller="writeReviewController as ctrl">  
+	<h3>Titlu:</h3>
+<input type = "text" ng-model="ctrl.reviewTitle"></input>
+<p><%=ctrl._errors.reviewTitle%></p>
+
+<h3>Review:</h3>
+<textarea rows="10" cols="50" ng-model="ctrl.reviewText"></textarea>
+<p><%=ctrl._errors.reviewText%></p>
+<h5>Planta:</h5>
+<input type = "text" ng-model="ctrl.plants"></input>
+<p><%=ctrl._errors.plants%></p> 
+<h5>Afectiuni pe care le trateaza:</h5>
+<input type = "text" ng-model="ctrl.uses"></input>
+<p><%=ctrl._errors.uses%></p>
+<h5>Producator:</h5>
+<input type = "text" ng-model="ctrl.producer"></input>
+<p><%=ctrl._errors.producer%></p>
+<button type="button" ng-click="sendReviewToServer()">Trimite Review</button>
+<h2 ng-show = "isSuccessful">Review trimis cu succes.</h2>
+</div> 
+
+
+</body>
+</html>

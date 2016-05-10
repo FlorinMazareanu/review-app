@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<title></title> 
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css" />
+	<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script src="js/angular-cookies.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script> 
+</head>
+<body ng-app="reviewsApp">
+ <p>test</p>
+ <form ng-controller =  "LoginController as loginCtrl">
+ 	<p>Email:</p> 
+ 	<input type="text" ng-model="loginCtrl.email"></input> <br>
+ 	
+ 	<p>Password:</p>
+ 	
+ 	<input type="password" ng-model="loginCtrl.password"></input>
+ 		<button type = "button" ng-click="login()">Login</button>
+ 	<a href="/register">
+ 		<button type = "button">Register</button>
+ 	</a>
+ 	<a href="/UserPage">
+ 		<button type = "button">Contul meu</button>
+ 	</a>
+ 	<a href="/writeReviewPage">
+ 		<button type = "button">Scrie review</button>
+ 	</a>
+ 	<a href="/allReviewsPage">
+ 		<button type = "button">Lista cu toate reviewurile</button>
+ 	</a>
+ </form>
+ <form>
+ 	<input type="text"></input>
+ 	<button>Search</button>
+ 	<a href="/advancedSearch">
+   <input type="button" value="Advanced Search" />
+</a>
+	
+ </form>
+<div ng-controller = "LogoutController as logoutCtrl">
+	<button type = "button" ng-click="logout()">Logout</button>
+</div>
+ 
+
+ <form>
+ <a href="/AboutPage">
+   <p>About</p>
+</a>
+</form>
+ 
+ 
+
+</body>
+</html>

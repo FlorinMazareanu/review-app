@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<title>All reviews page</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css" />
+	<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="js/angular.min.js"></script>  
+    <script src="js/angular-cookies.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script> 
+	<script type="text/javascript" src="js/app.js"></script> 
+</head>
+<body ng-app = "reviewsApp"> 
+<div ng-controller = "AllReviewsPageController as ctrl" >
+	<div ng-init="ctrl.getReviews()">
+		<div ng-repeat = "review in ctrl.reviews">
+			<a href="/review/<%=review._id%>"><h4><%=review.reviewTitle%></h4></a>
+			<p><%=review.reviewText%></p>
+			<p>Plante: 
+				<span ng-repeat = "plant in review.plants"><%=plant%><span ng-hide = "$last">,</span> </span>
+			</p>
+			<p>Afectiuni: 
+				<span ng-repeat = "use in review.uses"><%=use%><span ng-hide = "$last">,</span> </span>
+			</p>
+			<p>Producator: <%=review.producer%></p>
+		</div>
+	</div>
+</div>
+</body>
+</html>

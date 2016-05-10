@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<title>User Page</title>
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap-theme.min.css" />
+	<script type="text/javascript" src="/js/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="/js/angular.min.js"></script> 
+    <script src="/js/angular-cookies.min.js"></script>
+	<script type="text/javascript" src="/js/bootstrap.min.js"></script> 
+	<script type="text/javascript" src="/js/app.js"></script> 
+</head>
+<body ng-app = "reviewsApp"> 
+<div ng-controller = "ReviewPageController as ctrl" >
+ 	<div ng-show = "!ctrl.error">
+		<div ng-init="ctrl.reviewID = '{{reviewID}}'; ctrl.getReview()">
+			<h4><%=ctrl.review.reviewTitle%></h4>
+			<p><%=ctrl.review.reviewText%></p>
+			<p>Plante: 
+				<span ng-repeat = "plant in ctrl.review.plants"><%=plant%><span ng-hide = "$last">,</span> </span>
+			</p>
+			<p>Afectiuni: 
+				<span ng-repeat = "use in ctrl.review.uses"><%=use%><span ng-hide = "$last">,</span> </span>
+			</p>
+			<p>Producator: <%=ctrl.review.producer%></p>
+			<h6>Comentarii:</h6>
+			<div ng-repeat = "comment in ctrl.review.comments | orderBy:'-date'">
+				<p><%=comment.text%></p>
+				<p>de <%=comment.author%> la <%=comment.date%></p>
+			</div>
+		</div>
+		{% if userName %}
+		<textarea rows="10" cols="50" ng-model="ctrl.comment" placeholder="comentariu"></textarea> 
+		<button ng-click = "ctrl.addComment()">Adauga comentariu</button>
+		{% endif %}
+	</div>
+	<div ng-show="ctrl.error">
+		<p><%=ctrl.error%></p> 
+	</div>
+</div>
+</body>
+</html>
