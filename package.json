@@ -15,7 +15,8 @@
     "crypto": "0.0.3",
     "express": "^4.13.4",
     "mongodb": "^2.1.18",
+    "node-uuid": "*",
     "path": "^0.12.7",
-    "node-uuid" : "*"
+    "swig": "^1.4.2"
   }
 }
