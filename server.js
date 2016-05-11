@@ -14,9 +14,9 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(bodyParser.json());
-
-
-MongoClient.connect('mongodb://127.0.0.1:27017/reviewDB',function(err, database){
+//                        user           :pass         @ serverip        :port / database_name
+var mongourl = 'mongodb://heroku_zmb4bwd2:herokupasz123@ds019882.mlab.com:19882/heroku_zmb4bwd2'
+MongoClient.connect(mongourl,function(err, database){
 
 	if(err){
 		console.info("Can not connect to database");
