@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 //                        user           :pass         @ serverip        :port / database_name
-var mongourl = 'mongodb://heroku_zmb4bwd2:herokupasz123@ds019882.mlab.com:19882/heroku_zmb4bwd2'
+var mongourl = 'mongodb://florin:florin@ds019882.mlab.com:19882/heroku_jm1c7tmx'
 MongoClient.connect(mongourl,function(err, database){
 
 	if(err){
